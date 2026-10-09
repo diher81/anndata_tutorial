@@ -40,3 +40,10 @@ print("n_obs: ", adata.n_obs)
 print("n_vars: ", adata.n_vars)
 gene_types = np.random.choice(["intron", "exon", "promotor"], size=adata.n_vars)
 adata.var["gene_type"] = pd.Categorical(gene_types)
+
+adata.obsm["X_umap"] = np.random.normal(0, 1, size=(adata.n_obs, 2))
+adata.varm["gene_stuff"] = np.random.normal(0, 1, size=(adata.n_vars, 5))
+
+print(adata)
+
+print(adata.obsm["X_umap"][:5])
