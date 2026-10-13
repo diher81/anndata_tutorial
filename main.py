@@ -8,6 +8,7 @@
 import numpy as np
 import pandas as pd
 import anndata as ad
+import scanpy as sc
 from scipy.sparse import csr_matrix
 from importlib.metadata import version
 from IPython.display import display
@@ -47,3 +48,6 @@ adata.varm["gene_stuff"] = np.random.normal(0, 1, size=(adata.n_vars, 5))
 print(adata)
 
 print(adata.obsm["X_umap"][:5])
+
+
+adata_file = sc.read_h5ad("my_results.h5ad")
